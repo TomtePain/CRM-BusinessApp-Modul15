@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "CRM-BusinessApp",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

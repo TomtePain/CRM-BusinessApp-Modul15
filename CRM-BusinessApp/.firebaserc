@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simple-crm-5ac6e": {
+      "hosting": {
+        "CRM-BusinessApp": [
+          "simple-crm-5ac6e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simple-crm-5ac6e"
+  }
+}
