@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+.mr-16 {
+    margin-right: 16px;
+}
+
+.full-width {
+    width: 100%;
+}
