@@ -1,0 +1,23 @@
+<mat-card class="user-detail-header">
+    <img src="assets/img/avatar.png" alt="">
+    <div class="user-detail-shortview">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>{{ user.email }}</p>
+    </div>
+</mat-card>
+
+<mat-card class="mt-32">
+    <button class="menu-btn" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-card-header>
+        <mat-card-title>
+            Address
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <br>
+        {{ user.street}} {{ user.streetNo }} <br>
+        {{ user.zipCode}} {{ user.city }}
+    </mat-card-content>
+</mat-card>
