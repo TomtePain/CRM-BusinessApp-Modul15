@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { User } from 'src/models/user.class';
 import { inject } from '@angular/core';
 import { Firestore, collectionData, collection, doc, updateDoc, addDoc, setDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -16,25 +15,30 @@ import { Observable } from 'rxjs';
 export class DialogAddUserComponent {
 
   firestore: Firestore = inject(Firestore);
-  items$: Observable<any> | undefined;
 
-  
-  constructor() {
-    const itemCollection = collection(this.firestore, 'users');
-    this.items$ = collectionData(itemCollection);
-  }
 
   user: User = new User();
   birthDate: string = new Date().toLocaleString('en-US');
+  loading: boolean = false;
+
+  
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) {  }
+
+  
 
   async saveUser() {
+    this.loading = true;
     this.changeDateForm();
-    console.log('das ist unser neuer user:', this.user)
 
     const aCollection = collection(this.firestore, 'users');
     const usersDocRef = doc(aCollection);
     await setDoc(usersDocRef, this.user.toJSON());
+    
+    this.loading = false;
+    this.dialogRef.close();
   }
+
+  
 
   changeDateForm() {
     this.user.birthDate = new Date(this.birthDate).toLocaleDateString('en-US');
