@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -28,6 +29,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 
 
 
@@ -38,6 +41,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UserComponent,
     DialogAddUserComponent,
     UserDetailComponent,
+    DialogEditAddressComponent,
+    DialogEditUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +61,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     FormsModule,
     MatProgressBarModule,
     MatCardModule,
+    MatMenuModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
