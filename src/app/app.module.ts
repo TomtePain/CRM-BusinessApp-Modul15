@@ -31,6 +31,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { BudgetPlanComponent } from './budget-plan/budget-plan.component';
 
 
 
@@ -43,6 +44,7 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     UserDetailComponent,
     DialogEditAddressComponent,
     DialogEditUserComponent,
+    BudgetPlanComponent,
   ],
   imports: [
     BrowserModule,
